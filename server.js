@@ -17,46 +17,46 @@ app.get('/app', (req, res) => {
 
 
 app.get('/app/rps', (req, res) => {
-	res.status(200).send(rps())
+	res.status(200).send(JSON.stringify(rps()))
 })
 
 
 app.get('/app/rpsls', (req, res) => {
-	res.status(200).send(rpsls())
+	res.status(200).send(JSON.stringify(rpsls()))
 })
 
 
 app.get('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.query.shot))
+	res.status(200).send(JSON.stringify(rps(req.query.shot)))
 })
 
 
 app.get('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.query.shot))
+	res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 })
 
 
 app.post('/app/rps/play/', (req, res) => {
-	res.status(200).send(rps(req.body.shot))
+	res.status(200).send(JSON.stringify(rps(req.body.shot)))
 })
 
 
 app.post('/app/rpsls/play/', (req, res) => {
-	res.status(200).send(rpsls(req.body.shot))
+	res.status(200).send(JSON.stringify(rpsls(req.body.shot)))
 })
 
 
 app.get('/app/rps/play/:shot', (req, res) => {
-	res.status(200).send(rps(req.params.shot))
+	res.status(200).send(JSON.stringify(rps(req.params.shot)))
 })
 
 
 app.get('/app/rpsls/play/:shot', (req, res) => {
-	res.status(200).send(rpsls(req.params.shot))
+	res.status(200).send(JSON.stringify(rpsls(req.params.shot)))
 })
 
 
-app.get('*', (req, res) => {
+app.get('/app/*', (req, res) => {
 	res.status(404).send('404 NOT FOUND')
 })
 
