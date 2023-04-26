@@ -11,7 +11,7 @@ const app = express()
 app.use(json)
 app.use(urlencoded({extended: true}))
 
-app.get('/app', (req, res) => {
+app.get('/app', (_req, res) => {
 	res.status(200).send("200 OK")
 })
 
@@ -22,7 +22,7 @@ app.get('/app/rps', (req, res) => {
 
 
 app.get('/app/rpsls', (req, res) => {
-	res.status(200).send(JSON.stringify(rpsls()))
+	res.status(200).send(JSON.stringify(rpsls(req.body.shot)))
 })
 
 
