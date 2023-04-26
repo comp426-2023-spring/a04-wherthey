@@ -1,6 +1,7 @@
 {
   "name": "a04-wherthey",
   "version": "1.0.0",
+  "type": "module",
   "description": "stand up api using express",
   "main": "server.js",
   "directories": {
